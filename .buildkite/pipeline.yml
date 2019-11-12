@@ -1,0 +1,21 @@
+steps:
+  - label: ':sparkles: lint'
+    plugins:
+      - plugin-linter#v2.0.0:
+          id: https://github.com/amasare/dpd-plugin-fitness-function
+    agents: 
+      queue: 'base-agent'
+
+  - label: ':shell: Shellcheck'
+    plugins:
+      - shellcheck#v1.1.2:
+          files: hooks/**
+    agents: 
+      queue: 'base-agent'
+
+  - label: ':electric_plug: "command" test'
+    plugins:
+      - docker-compose#v2.5.1:
+          run: tests
+    agents: 
+      queue: 'base-agent'
