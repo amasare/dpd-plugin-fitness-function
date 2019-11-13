@@ -6,7 +6,7 @@ echo "steps:
   - label: ':sparkles: lint'
     plugins:
       - plugin-linter#v2.0.0:
-          id: ${BUILDKITE_PLUGIN_DPD_PLUGIN_SUPPORT_PLUGINSOURCE}
+          id: ${BUILDKITE_PLUGIN_DPD_PLUGIN_SUPPORT_PLUGINSOURCE:?"pluginsource missing"}
     agents: 
       queue: 'base-agent'
 
