@@ -21,3 +21,11 @@ steps:
       - https://github.com/amasare/dpd-plugin-fitness-function#v1.0.0:
           pluginsource: <source for plugin under test>
 ```
+
+## Testing Locally
+To run tests locally you will need to: 
+*  install bats. `brew install bats-core` on MacOS. Other installation instructions [here](https://github.com/bats-core/bats-core).
+*  run tests with buildkites plugin tester which comes with supporting test libraries. `docker run it --rm  -v "$(pwd):/plugin" buildkite/plugin-tester`.
+
+
+Testing recommendations [here](https://github.com/buildkite-plugins/buildkite-plugin-tester)
