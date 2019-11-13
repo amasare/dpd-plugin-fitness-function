@@ -1,0 +1,5 @@
+steps:
+  - label: ':sparkles: sparkles'
+    command: echo woah
+    agents: 
+      queue: 'base-agent'

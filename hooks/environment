@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ueo pipefail
+
+HOOKS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
+
+export COMMANDS_DIR="$HOOKS_DIR/../bin"
+export PATH="$PATH:$COMMANDS_DIR"
+
+echo commands are available here: "${COMMANDS_DIR}"

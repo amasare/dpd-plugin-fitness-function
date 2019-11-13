@@ -1,8 +1,4 @@
-#!/bin/bash
-
-set -euo pipefail
-
-echo "steps:
+steps:
   - label: ':sparkles: lint'
     plugins:
       - plugin-linter#v2.0.0:
@@ -23,6 +19,3 @@ echo "steps:
           run: tests
     agents: 
       queue: 'base-agent'
-" > fitness.yml
-
-buildkite-agent pipeline upload fitness.yml
