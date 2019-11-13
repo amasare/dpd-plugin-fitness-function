@@ -1,7 +1,11 @@
-name: DPD Plugin Fitness Function
+name: DPD Plugin Support
 description: Validate DPD buildkite plugins standards (and release diff plugin?)
 author: Ama Asare <change when moving repos>, DPD
 requirements:
   - docker
 configuration:
-  properties: {}
+  properties:
+    pluginsource:
+      type: string
+  required:
+    - pluginsource

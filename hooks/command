@@ -6,7 +6,7 @@ echo "steps:
   - label: ':sparkles: lint'
     plugins:
       - plugin-linter#v2.0.0:
-          id: https://github.com/amasare/buildkite-plugin-hello-world
+          id: ${BUILDKITE_PLUGIN_DPD_PLUGIN_SUPPORT_PLUGINSOURCE}
     agents: 
       queue: 'base-agent'
 
