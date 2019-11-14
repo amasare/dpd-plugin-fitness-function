@@ -1,12 +1,19 @@
 steps:
   - block: "Request Release"
     fields:
-      - text: "Version Number"
-        key: "release-version-number"
-        hint: "Version number for this release using semver (v.<major-version-number>.<minor-version-number>.<patch-number>) :writing_hand:"
+      - text: "Version"
+        key: "release-version"
+        hint: "Version for this release using semver (v.<major-version-number>.<minor-version-number>.<patch-number>) :writing_hand:"
         required: true
       - text: "CHANGELOG"
         key: "release-changelog"
         hint: "What has changed with this release?"
         required: true
+  - label: ':rocket:'
+    commands: 
+      - RELEASE_VERSION = buildkite-agent meta-data get "release-version"
+      - RELEASE_CHANGELOG = buildkite-agent meta-data get "release-changelog"
+      - git tag -a "${RELEASE_VERSION}" -m "CHANGELOG. ${RELEASE_CHANGELOG}"
+      - git push origin "${RELEASE_VERSION}"
+      - echo "Created release ${RELEASE_VERSION}"
   
