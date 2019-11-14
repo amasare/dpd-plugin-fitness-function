@@ -11,9 +11,10 @@ steps:
         required: true
   - label: ':rocket:'
     commands: 
-      - RELEASE_VERSION = buildkite-agent meta-data get "release-version"
-      - RELEASE_CHANGELOG = buildkite-agent meta-data get "release-changelog"
-      - git tag -a "${RELEASE_VERSION}" -m "CHANGELOG. ${RELEASE_CHANGELOG}"
-      - git push origin "${RELEASE_VERSION}"
-      - echo "Created release ${RELEASE_VERSION}"
+      - RELEASE_VERSION=buildkite-agent meta-data get "release-version"
+      - RELEASE_CHANGELOG=buildkite-agent meta-data get "release-changelog"
+      - env
+      - git tag -a "${BUILDKITE_AGENT_META_DATA_RELEASE_VERSION}" -m "CHANGELOG. ${BUILDKITE_AGENT_META_DATA_RELEASE_CHANGELOG}"
+      - git push origin "${BUILDKITE_AGENT_META_DATA_RELEASE_VERSION}"
+      - echo "Created release ${BUILDKITE_AGENT_META_DATA_RELEASE_VERSION}"
   
