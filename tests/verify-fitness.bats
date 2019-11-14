@@ -9,5 +9,5 @@ verify_fitness_command="$PWD/hooks/../bin/verify-fitness"
 
   run cat "$verify_fitness_command"
 
-  assert_output --regexp "buildkite-agent pipeline upload .*/fitness.yml"
+  assert_output --regexp "buildkite-agent pipeline upload .*/verify-fitness.yml"
 }
