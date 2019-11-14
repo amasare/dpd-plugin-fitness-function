@@ -13,7 +13,7 @@ steps:
     agents: 
       queue: 'base-agent'
 
-  - label: ':electric_plug: \"command\" test'
+  - label: ':electric_plug: "command" test'
     plugins:
       - docker-compose#v2.5.1:
           run: tests
