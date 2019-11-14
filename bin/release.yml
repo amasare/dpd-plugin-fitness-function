@@ -3,7 +3,7 @@ steps:
     fields:
       - text: "Version Number"
         key: "release-version-number"
-        hint: "Give a version number for this release using semver :name_badge:"
+        hint: "Version number for this release using semver (v.<major-version-number>.<minor-version-number>.<patch-number>) :writing_hand:"
         required: true
       - text: "CHANGELOG"
         key: "release-changelog"
