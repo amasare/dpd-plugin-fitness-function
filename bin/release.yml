@@ -1,5 +1,12 @@
 steps:
-  - label: ':sparkles: sparkles'
-    command: echo woah
-    agents: 
-      queue: 'base-agent'
+  - block: "Request Release"
+    fields:
+      - text: "Version Number"
+        key: "release-version-number"
+        hint: "Give a version number for this release using semver :name_badge:"
+        required: true
+      - text: "CHANGELOG"
+        key: "release-changelog"
+        hint: "What has changed with this release?"
+        required: true
+  

@@ -19,3 +19,13 @@ steps:
           run: tests
     agents: 
       queue: 'base-agent'
+  
+
+  - label: ':pill: when you take your own medicine'
+    command: release
+    plugins:
+      - https://github.com/amasare/dpd-plugin-support:
+          pluginsource: https://github.com/amasare/buildkite-plugin-hello-world
+    agents: 
+      queue: 'base-agent'
+
