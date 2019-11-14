@@ -1,5 +1,29 @@
 #!/bin/bash
 
 set -euo pipefail
+env
+echo "
+steps:
+  - label: ':sparkles: lint'
+    plugins:
+      - plugin-linter#v2.0.0:
+          id: ${PLUGINSOURCE}
+    agents: 
+      queue: 'base-agent'
 
-buildkite-agent pipeline upload ${COMMANDS_DIR}/verify-fitness.yml
+  - label: ':shell: Shellcheck'
+    plugins:
+      - shellcheck#v1.1.2:
+          files: hooks/**
+    agents: 
+      queue: 'base-agent'
+
+  - label: ':electric_plug: \"command\" test'
+    plugins:
+      - docker-compose#v2.5.1:
+          run: tests
+    agents: 
+      queue: 'base-agent'
+" > fitness.yml
+buildkite-agent pipeline upload fitness.yml
+

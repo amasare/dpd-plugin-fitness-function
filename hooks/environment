@@ -4,7 +4,10 @@ set -ueo pipefail
 
 HOOKS_DIR="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
+# exporting plugin properties env var because it is not available outside of this environment file context
+export PLUGINSOURCE="$BUILDKITE_PLUGIN_DPD_PLUGIN_SUPPORT_PLUGINSOURCE"
+
 export COMMANDS_DIR="$HOOKS_DIR/../bin"
 export PATH="$PATH:$COMMANDS_DIR"
-
+env
 echo commands are available here: "${COMMANDS_DIR}"
