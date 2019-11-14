@@ -25,7 +25,7 @@ steps:
     command: release
     plugins:
       - https://github.com/amasare/dpd-plugin-support:
-          pluginsource: https://github.com/amasare/buildkite-plugin-hello-world
+          pluginsource: https://github.com/amasare/dpd-plugin-fitness-function
     agents: 
       queue: 'base-agent'
 
