@@ -25,7 +25,7 @@ You can create a Github Release from the tagged commit through the Github UI but
 ```yml
 steps:
   - plugins:
-      - https://github.com/amasare/dpd-plugin-fitness-function#v1.0.3:
+      - https://github.com/amasare/dpd-plugin-fitness-function#v1.0.4:
           pluginsource: https://github.com/amasare/buildkite-plugin-hello-world
 ```
 
@@ -37,7 +37,7 @@ The id of the plugin (e.g. my-org/my-plugin OR https://github.com/my-org/my-plug
 ```yml
 steps:
   - plugins:
-      - https://github.com/amasare/dpd-plugin-fitness-function#v1.0.3:
+      - https://github.com/amasare/dpd-plugin-fitness-function#v1.0.4:
           pluginsource: <source for plugin under test>
 ```
 
