@@ -6,7 +6,7 @@ steps:
     agents: 
       queue: 'base-agent'
 
-  - label: ':shell: Shellcheck'
+  - label: ':shell: shellcheck'
     plugins:
       - shellcheck#v1.1.2:
           files: hooks/**

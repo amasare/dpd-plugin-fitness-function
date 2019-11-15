@@ -1,13 +1,13 @@
 steps:
-  - block: "Request Release"
+  - block: 'request release'
     fields:
-      - text: "Version"
-        key: "release-version"
-        hint: "Version for this release using semver (v.<major-version-number>.<minor-version-number>.<patch-number>) :writing_hand:"
+      - text: 'Version'
+        key: 'release-version'
+        hint: 'Use semver (v.<major-version-number>.<minor-version-number>.<patch-number>) :writing_hand:'
         required: true
-      - text: "CHANGELOG"
-        key: "release-changelog"
-        hint: "What has changed with this release?"
+      - text: 'CHANGELOG' 
+        key: 'release-changelog'
+        hint: 'What has changed with this release?'
         required: true
   - label: ':rocket:'
     command: $COMMANDS_DIR/release.sh
