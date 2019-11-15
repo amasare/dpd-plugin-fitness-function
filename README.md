@@ -1,7 +1,7 @@
 # dpd-plugin-fitness-function
 Checks DPD plugins meet fitness expectations of a DPD plugins and gives the option to version plugins using semver.
 
-### Fitness expectations:
+#### Fitness functions:
 1. Lint
     * Checks for a plugin.yml file (and validates it against [the plugin.yml JSON schema](lib/plugin-yaml-schema.yml))
     * Checks that all readme examples match the plugin’s schema
@@ -12,10 +12,13 @@ Checks DPD plugins meet fitness expectations of a DPD plugins and gives the opti
     * [Buildkite Plugin Linter](https://github.com/buildkite-plugins/buildkite-plugin-linter/)
 
 2. [Shellcheck](https://github.com/koalaman/shellcheck)
-3. Plugin has [tests](https://github.com/buildkite-plugins/buildkite-plugin-tester) in its `tests` directory and they all pass successfully
+3. Tests
+    * The plugin should have tests in a `tests` directory for each command. They will be assesed with the [Buildkite Plugin Tester](https://github.com/buildkite-plugins/buildkite-plugin-tester)
 
-### Release:
-You will need to hit the "Request Release" button in the Buildkite pipeline to input release details such as the version number (using [semver](https://semver.org/)) and any associated release notes. The version number will be used to create a git tag that is then pushed to github from the pipeline.
+#### Release:
+You will need to hit the "Request Release" button in the Buildkite pipeline to input release details such as the version number (using [semver](https://semver.org/)) and any associated release notes. The version number will be used to create a git tag that is then pushed to github from the pipeline. 
+
+You can create a Github Release from the tagged commit through the Github UI but that is not necessary as Buildkite will respect a tag as a valid version of a plugin. Your contribution is welcomed to [automate creating actual Github releases](https://help.github.com/en/github/administering-a-repository/creating-releases) through the pipeline.
 
 ## Example
 
